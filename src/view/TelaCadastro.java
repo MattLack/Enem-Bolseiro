@@ -62,7 +62,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     private JButton btnCadastrar;
     private JButton btnVoltar;
     private JLabel lblIdDaNova;
-    
+    private static  int limite = 70;
     
     public TelaCadastro() {
         initComponents();
@@ -162,7 +162,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         	}
         });
         
-        lblIdDaNova = new JLabel("Id da nova Quest\u00E3o:");
+        lblIdDaNova = new JLabel("Id da nova Questão: " + (Fachada.getInstance().listarQuestoes().size() +1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(
@@ -329,6 +329,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         zerarCampos();
     }
     
+    
    public void zerarCampos(){
 	   this.txaTextoDaQuestao.setText("");
 	   this.tfAlternativaA.setText("");
@@ -338,5 +339,6 @@ public class TelaCadastro extends javax.swing.JFrame {
 	   this.tfAlternativaE.setText("");
 	   this.grupo.clearSelection();
    }
+   
     
 }

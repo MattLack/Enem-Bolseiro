@@ -1,6 +1,9 @@
 package front;
 
 import interfaces.ISimulado;
+
+import java.util.ArrayList;
+
 import negocio.beans.Alternativa;
 import negocio.beans.Questao;
 import negocio.beans.TiposEnum;
@@ -56,7 +59,9 @@ public class Fachada implements ISimulado{
 		this.crud.remover(q);
 	}
 
-	
+	public ArrayList<Questao> listarQuestoes(){
+		return this.crud.listarQuestoes();
+	}
 	
 	
 }

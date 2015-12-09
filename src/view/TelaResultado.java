@@ -137,7 +137,7 @@ public class TelaResultado extends JFrame{
 			resultado += "<p>Erros Espanhol: "+ this.ErrosSPAN + "\n";
 		}
 		if(this.ErrosMATH > 0){
-			resultado += "<p>Erros Inglês: "+ this.ErrosMATH + "\n";
+			resultado += "<p>Erros Matemática: "+ this.ErrosMATH + "\n";
 		}
 		resultado += "<p>Total de erros : "+ (this.ErrosCIENCHUMAN + this.ErrosCIENCNATURE + this.ErrosLANGUAGE + 
 				this.ErrosENGL + this.ErrosSPAN + this.ErrosMATH + "</p></html>");

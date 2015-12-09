@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import exceptions.QUESTAOException;
+import front.Fachada;
 
 public class TelaPrincipal extends JFrame {
 
@@ -54,7 +55,7 @@ public class TelaPrincipal extends JFrame {
 				
 				try {
 					
-					new TelaQuestoes();
+					new TelaQuestoes(Fachada.getInstance().questoesRandom());
 					dispose();
 				} catch (QUESTAOException e) {
 					JOptionPane.showMessageDialog(null, e.getMessage(),"Erro", JOptionPane.ERROR_MESSAGE);

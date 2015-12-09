@@ -17,6 +17,7 @@ import javax.swing.border.EmptyBorder;
 import negocio.beans.Alternativa;
 import negocio.beans.LetrasEnum;
 import negocio.beans.Questao;
+import negocio.utilitarios.HtmlReplace;
 import exceptions.QUESTAOException;
 import front.Fachada;
 
@@ -46,10 +47,10 @@ public class TelaQuestoes extends JFrame {
 	
 	
 	
-	public TelaQuestoes() throws QUESTAOException {
+	public TelaQuestoes(Questao[] questoes) throws QUESTAOException {
 		
 		this.sistema = Fachada.getInstance();  
-		this.questoes = sistema.questoesRandom();
+		this.questoes = questoes;
 		this.respostas = new Alternativa[this.questoes.length];
 		this.posQuestaoAtual = 0;
 		
@@ -189,7 +190,9 @@ public class TelaQuestoes extends JFrame {
 		
 		this.lbNumeroQuestao.setText("Questao " + (this.posQuestaoAtual + 1));
 		
-		this.lbQuestao.setText( questao.getTexto());
+		
+		this.lbQuestao.setText(HtmlReplace.tratarLimites(questao.getTexto()));
+		
 		this.rbAlternativaA.setText(questao.getAlternativas()[0].getTexto());
 		this.rbAlternativaB.setText(questao.getAlternativas()[1].getTexto());
 		this.rbAlternativaC.setText(questao.getAlternativas()[2].getTexto());

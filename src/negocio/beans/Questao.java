@@ -99,6 +99,7 @@ public class Questao implements Serializable{
 	public Alternativa getCorreta(){
 		
 		Alternativa resultado = null;
+		
 		for(int i =0;i< this.alternativas.length;i++){
 			if(this.alternativas[i].getIsCorreta() == true){
 				resultado = this.alternativas[i];

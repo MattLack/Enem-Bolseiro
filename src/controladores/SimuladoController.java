@@ -64,7 +64,7 @@ public class SimuladoController{
     	    	
     			if(respostas[i] != null && questoes[i].getTipo().equals(tipoQuestao)){
     				
-    				if(questoes[i].getCorreta().getId().toString().equals(respostas[i].getId().toString())){
+    				if(questoes[i].getCorreta().getId().equals(respostas[i].getId())){
     					
     				   resultado +=1;
     				}
@@ -77,7 +77,7 @@ public class SimuladoController{
 	    for(int i = 0; i< respostas.length;i++){
 	    	
 			if(respostas[i] != null && questoes[i].getTipo().equals(tipoQuestao)){
-				if(questoes[i].getCorreta().getId().toString().equals(respostas[i].getId().toString()) == false){
+				if(questoes[i].getCorreta().getId().equals(respostas[i].getId()) == false){
 				   resultado +=1;
 				}
 			}
